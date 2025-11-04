@@ -11,8 +11,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wdth,wght@75,900&display=swap" rel="stylesheet">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wdth,wght@75,300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wdth,wght@75,300&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="main.css">
 </header>
@@ -21,9 +21,18 @@
     <section id="header" class="container" style="grid-area: header">
         <div id="navheader">
             <nav>
-                <a href="main.html">Despre</a>
-                <a href="">Colectie</a>
-                <a href="">Contact</a>
+                <ul class="meniu-navigare">
+                    <li><a href="main.html">Despre</a></li>
+                    <li>
+                        <a>Colectie</a>
+                        <ul class="submeniu">
+                            <li>Dalda</li>
+                            <li>da;da</li>
+                            <li>Dada</li>
+                        </ul>
+                    </li>
+                    <li><a href="">Contact</a></li>
+                </ul>
             </nav>
         </div>
         <div id="header-photo" class="container">
@@ -48,26 +57,29 @@
         </div>
     </section>
     <section id="descriere" class="container" style="grid-area:description">
-        <h2>NOI SUNTEM CEI NOI</h2>
-        <p>NOI VOM FI CEI NOI CARE</p>
+        <h2>CINE SUNTEM?</h2>
+        <p>
+            Proiectul ,,Colectie Digitala" a pornit din pasiunea mai multor membri ai comunitatii foto,
+            unindu-ne dorinta de a depasi standardele de pana atunci de a distribui pozele pe retele sociale,
+            fiind creativi
+        </p>
     </section>
     <section id="cine-suntem" class="container" style="grid-area: about">
-        <div id="about-image">
+        <div id="about-image" style="grid-area: photo">
             <img src="Poze/Main Page/About/about-section.jpg">
         </div>
-        <div id="about-text">
+        <div id="about-text" style="grid-area: text">
             <p>
-                Seful nostru
+                Salut! Sunt Stanescu Mihai si respect totul. Am experienta de 12 ani 
+                in lumea fotografiei. Cand am fost acasa am inlocuit pe tine.
             </p>
         </div>
-        <div id="about-link">
-            <p>
+        <div id="about-link" style="grid-area: link">
+            <a href="Pagini HTML/about.html">
                 Contact
-            </p>
+            </a>
         </div>
     </section>
-
 </body>
-
 
 </html>

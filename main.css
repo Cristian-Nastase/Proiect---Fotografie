@@ -42,24 +42,65 @@ body
 section#header
 {
     width: 100%;
-    
 }
 
 div#navheader
 {
-    display: flex;
     padding: 1rem;
 
     background-color: var(--culoare-nav);
-     
-    a
-    {
-        font-size: 1rem;
-        font-weight: 300;
+}
 
-        padding: 1rem;
-        color:black;
-        text-decoration: none;
+
+nav > ul.meniu-navigare
+{
+    list-style-type: none;
+
+    display: flex;
+
+    li
+    {
+        flex: 0 0 10%;
+        a
+        {
+            font-size: 1vw;
+            font-weight: 300;
+
+            padding: 1rem;
+            color:black;
+            text-decoration: none;
+        }
+    }
+}
+
+nav > ul.meniu-navigare > li:hover > ul.submeniu
+{
+    visibility: visible;
+}
+
+nav > ul.meniu-navigare > li:active > ul.submeniu
+{
+    visibility: visible;
+}
+
+
+nav ul.submeniu
+{
+    list-style-type: none;
+    visibility: hidden;
+
+    position: absolute;
+    z-index: 200;
+
+
+    li
+    {
+        text-align: center;
+        padding: 2rem;
+
+        color: black;
+
+        background-color: var(--culoare-nav);
     }
 }
 
@@ -171,16 +212,23 @@ section#descriere
     width: 75%;
     height: 80%;
     margin: auto;
-    margin-top: 1rem;
+    margin-top: 2rem;
     padding: 2rem;
 
+    align-items: center;
     text-align: center;
 
     background-color: var(--culoare-nav);
-}
 
-section#descriere.container
-{
+    font-size: 1vw;
+
+    p
+    {
+        padding: 1rem ;
+        font-weight: 300;
+
+        text-align: left;
+    }
 }
 
 
@@ -189,39 +237,75 @@ section#cine-suntem
     width: 75%;
     height: 80%;
     margin: auto;
-    margin-top: 1rem;
+    margin-top: 2rem;
     padding: 2rem;
+
+    align-items: center;
+
+    font-size: 1vw;
 
     background-color: var(--culoare-nav);
 }
 
 section#cine-suntem.container
 {
-    display: flex;
+    display: grid;
 
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
+    grid-template-columns: 2fr 2fr;
+    grid-template-rows: 2fr 1fr;
+    grid-template-areas: 
+    "photo text"
+    "photo link";
 }
+
+
 
 div#about-image
 {
-    height: 50%;
-    margin: auto;
-    padding: 1rem;
-
-    border:1px solid yellow;
-
+    padding: 3em;
     img
     {
-        max-width: 100%;
-        
-        height: auto;
-        filter:saturate(0);
+        width: 100%;
+
+        border-radius: 50%;
+
+        filter: saturate(0);
     }
 }
 
+div#about-text
+{
+    padding: 1rem;
+    p
+    {
+        font-weight: 300;
+    }
+}
 
+div#about-link
+{
+    padding: 1vw;
+
+    text-align: center;
+    a
+    {
+        font-size: 2vw;
+        color:black;
+
+        
+        text-decoration: none;
+    }
+
+    a:hover
+    {
+        color:gray;
+    }
+
+    a::after
+    {
+        content: "📷";
+    }
+}
 
 @media (min-width: 2500px)
 {
@@ -249,6 +333,37 @@ div#about-image
             font-size: 1vw;
         }
     }
+
+    section#descriere
+    {
+        font-size: 1vw;
+    }
+
+    div#about-image
+    {
+        padding: 2vw;
+    }
+
+    div#about-text
+    {
+        p
+        {
+            font-size: 1vw;
+        }
+    }
+
+    div#about-link
+    {
+        a
+        {
+            font-size: 1vw;
+        }
+    }
+
+    div#about-link > a::after
+    {
+        content: "📷";
+    }
 }
 
 @media (max-width:1400px)
@@ -263,13 +378,73 @@ div#about-image
         p
         {
             left:4rem;
+            top:10rem;
             font-size: 2rem;
         }
     }
-    
+
+    nav > ul.meniu-navigare
+    {
+        justify-content: center;
+
+        li
+        {
+            flex: 0 0 20%;  
+        }
+
+        li a
+        {
+            font-size: 2vw;
+        }
+    }
+
     section#showcase-poze
     {
         width: 100%;
+    }
+
+
+    section#descriere
+    {
+        font-size: 3vw;    
+    }
+    
+    section#cine-suntem
+    {
+        font-size: 3vw;
+    }
+
+    section#cine-suntem.container
+    {
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+    }
+
+    div#about-image
+    {
+        padding: 1rem;
+
+        width: 100%;
+        height: auto;
+
+        img
+        {
+            width: 100%;
+
+            
+        }
+    }
+
+    div#about-link
+    {
+        padding: 2rem;
+        a
+        {
+            font-size: 4vw;
+        }
     }
 }
 
@@ -279,16 +454,23 @@ div#about-image
     div#navheader
     {
         width: 100%;
-
-        justify-content: space-around;
     }
+
+    nav > ul.meniu-navigare
+    {
+        li a
+        {
+            font-size: 5vw;
+        }
+    }
+
     div#header-photo
     {
         p
         {
             padding: 1rem;
             left:2rem;
-            top:5rem;
+            top:10rem;
             font-size: 1rem;
         }
     }
