@@ -19,22 +19,22 @@
 
 <body>
     <section id="header" class="container" style="grid-area: header">
-        <div id="navheader">
-            <nav>
-                <ul class="meniu-navigare">
-                    <li><a href="main.html">Despre</a></li>
+        <nav class="container">
+                <ul id="meniu-nav">
+                    <li><a href="main.html">Acasa</a></li>
                     <li>
-                        <a>Colectie</a>
-                        <ul class="submeniu">
-                            <li>Dalda</li>
-                            <li>da;da</li>
-                            <li>Dada</li>
-                        </ul>
+                        <button>Colectii</button>
+                        <div class="submeniu-nav">
+                            <ul>
+                                <li><a href="main.html">Cauta</a></li>
+                                <li><a href="main.html">Vezi colectii</a></li>
+                                <li><a href="main.html">Formular</a></li>
+                            </ul>
+                        </div>
                     </li>
-                    <li><a href="">Contact</a></li>
+                    <li><a href="Pagini HTML/about.html">Despre</a></li>
                 </ul>
-            </nav>
-        </div>
+        </nav>
         <div id="header-photo" class="container">
             <p>Regândirea distribuirii fotografiilor</p>
             <img src="Poze/Main Page/poza-headerberlin.jpg">
@@ -48,7 +48,7 @@
             </h2>
         </div>
         <div id="slideshow" class="container">
-            <div style="grid-area: poza1"><img src="Poze/Main Page/Slideshow/poza1"></div>
+            <div style="grid-area: poza1"><img src="Poze/Main Page/Slideshow/poza1.png"></div>
             <div style="grid-area: poza2"><img src="Poze/Main Page/Slideshow/poza2.png"></div>
             <div style="grid-area: poza3"><img src="Poze/Main Page/Slideshow/poza3.png"></div>
             <div style="grid-area: poza4"><img src="Poze/Main Page/Slideshow/poza4.webp"></div>
@@ -80,6 +80,19 @@
             </a>
         </div>
     </section>
+
+    <section id="colectii" class="container" style="grid-area: colectii">
+        <h2>Colectiile noastre:</h2>
+        <div id="slideshow-colectii" class="container">
+            <div class="poza-colectie"><img src="Poze/Main Page/Slideshow/poza1.png"></div>
+            <div class="poza-colectie"><img src="Poze/Main Page/Slideshow/poza2.png"></div>
+            <div class="poza-colectie"><img src="Poze/Main Page/Slideshow/poza3.png"></div>
+            <div class="poza-colectie"><img src="Poze/Main Page/Slideshow/poza4.webp"></div>
+        </div>
+    </section>
+    <footer style="grid-area: footer">
+        salutari
+    </footer>
 </body>
 
 </html>

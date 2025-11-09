@@ -12,6 +12,7 @@
     /* Variabile header */
     --culoare-nav: #e0e0e0;
     --culoare-bordura-poza: black;
+    --culoare-footer: #5f6266;
 
     /* Variabile body */
     --culoare-background: #b2b2b2;
@@ -21,6 +22,9 @@
 
 body
 {
+    width: 100%;
+    overflow-x: hidden;
+    
     margin: 0;
     padding: 0;
 
@@ -28,14 +32,18 @@ body
 
     display: grid;
     grid-template-columns: 2fr 2fr;
+    grid-template-rows: repeat(1fr);
 
     grid-template-areas:
         "header header"
         "showcase showcase"
+        "colectii colectii"
         "description about"
         "footer footer";
 
-    column-gap: 1rem;
+    
+    column-gap: 2vw;
+    row-gap: 0;
 
 }
 
@@ -44,73 +52,83 @@ section#header
     width: 100%;
 }
 
-div#navheader
+nav
 {
+    width: 100%;
+
     padding: 1rem;
+    margin: auto;
 
     background-color: var(--culoare-nav);
 }
 
-
-nav > ul.meniu-navigare
+ul#meniu-nav
 {
-    list-style-type: none;
-
+    list-style: none;
     display: flex;
+
+    align-items: center;
 
     li
     {
-        flex: 0 0 10%;
+        margin: 1rem;
+        font-size: 1rem;
+
+        button
+        {
+
+            font-size: 1rem;
+            background-color: transparent;
+            border: 0px;
+        }
+
         a
         {
-            font-size: 1vw;
-            font-weight: 300;
+            font-size: 1rem;
 
-            padding: 1rem;
-            color:black;
+            color: black;
             text-decoration: none;
         }
     }
 }
 
-nav > ul.meniu-navigare > li:hover > ul.submeniu
+div.submeniu-nav
 {
-    visibility: visible;
-}
-
-nav > ul.meniu-navigare > li:active > ul.submeniu
-{
-    visibility: visible;
-}
-
-
-nav ul.submeniu
-{
-    list-style-type: none;
-    visibility: hidden;
+    display: block;
 
     position: absolute;
     z-index: 200;
 
+    /* background-color: var(--culoare-nav); */
 
-    li
+    ul
     {
-        text-align: center;
-        padding: 2rem;
+        visibility: hidden;
+        display: flex;
+        flex-direction: column;
 
-        color: black;
+        justify-content: center;
+        /* align-items: center; */
 
+        border: 2px solid yellow;
         background-color: var(--culoare-nav);
+
+        list-style: none;
+        li a
+            {
+                color: black;
+                text-decoration: none;
+            }
     }
 }
 
 div#header-photo
 {
     text-align: center;
-
+    width: 100%;
     img
     {
-        width: 90%;
+        width: 100%;
         height: auto;
 
         border: .5rem solid var(--culoare-bordura-poza);
@@ -160,9 +178,10 @@ div#header-photo
 
 section#showcase-poze
 {
-    width: 90%;
+    border:1px solid yellow;
     padding: .5rem;
     margin: auto;
+    width: 95%;
 
     background-color: var(--culoare-nav);
 }
@@ -180,7 +199,7 @@ div#text
 
 div#slideshow.container
 {
-    width: 100%;
+    /* width: 100%; */
     display: grid;
 
     grid-template-columns: repeat(1fr, 6);
@@ -199,17 +218,36 @@ div#slideshow
     {
         width: 100%;
         height: 100%;
+
+        animation: poza-fotografii .5s;
     }
 
     img:hover
     {
-        scale: 1.05;
+        scale: 1.1;
+        filter: brightness(90%);
+        transition: scale .1s, filter .1s;
     }
 }
 
+@keyframes poza-fotografii 
+{
+    from
+    {
+        opacity: 0%;
+        transform: translateY(15%);
+    }
+
+    to
+    {
+        opacity: 100%;
+        transform: translateY(0%)
+    }
+} 
+
 section#descriere
 {
-    width: 75%;
+    width: 65%;
     height: 80%;
     margin: auto;
     margin-top: 2rem;
@@ -218,9 +256,13 @@ section#descriere
     align-items: center;
     text-align: center;
 
+    border-radius: 1rem;
+
     background-color: var(--culoare-nav);
 
     font-size: 1vw;
+
+    animation: poza-fotografii .5s;
 
     p
     {
@@ -228,23 +270,27 @@ section#descriere
         font-weight: 300;
 
         text-align: left;
-    }
+    }    
 }
 
 
 section#cine-suntem
 {
-    width: 75%;
+    width: 65%;
     height: 80%;
     margin: auto;
     margin-top: 2rem;
     padding: 2rem;
+
+    border-radius: 1rem;
 
     align-items: center;
 
     font-size: 1vw;
 
     background-color: var(--culoare-nav);
+
+    animation: poza-fotografii .5s;
 }
 
 section#cine-suntem.container
@@ -267,6 +313,7 @@ div#about-image
     {
         width: 100%;
 
+        border: min(1rem,1vw) solid var(--culoare-background);
         border-radius: 50%;
 
         filter: saturate(0);
@@ -284,7 +331,9 @@ div#about-text
 
 div#about-link
 {
+    flex-basis: max-content;
     padding: 1vw;
+    margin:1rem;
 
     text-align: center;
     a
@@ -306,6 +355,71 @@ div#about-link
         content: "📷";
     }
 }
+
+section#colectii
+{
+ 
+    background-color: var(--culoare-nav);
+    width: 95%;
+    margin: auto;
+    margin-top: 1vw;
+    height: auto;
+
+    padding: .5rem;
+    h2
+    {
+        padding: 1rem;
+        font-size: min(3vw, 4rem);
+        animation: poza-fotografii .5s;
+    }
+}
+
+div#slideshow-colectii.container
+{
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: center;
+    align-items: center;
+}
+
+div.poza-colectie
+{
+    flex: 0 1 20%;
+    padding: 2vw;
+    img
+    {
+        border-radius: 50%;
+        border: min(1rem,1vw) solid var(--culoare-background);
+
+        object-fit: cover;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1/1;
+
+        animation: poza-fotografii .5s;
+    }
+
+    img:hover
+    {
+        scale: 1.1;
+        filter: brightness(70%);
+        transition: scale .1s, filter .1s;
+    }
+}
+
+footer
+{
+    width: 100%;
+    height: 100%;
+
+    margin: auto;
+    margin-top: 4vw;
+
+    background-color: var(--culoare-footer);
+    color:white;
+}
+
 
 @media (min-width: 2500px)
 {
@@ -398,11 +512,6 @@ div#about-link
         }
     }
 
-    section#showcase-poze
-    {
-        width: 100%;
-    }
-
 
     section#descriere
     {
@@ -420,12 +529,13 @@ div#about-link
 
         flex-direction: column;
 
+        justify-content: center;
         align-items: center;
     }
 
     div#about-image
     {
-        padding: 1rem;
+        padding: 4vw;
 
         width: 100%;
         height: auto;
@@ -433,14 +543,14 @@ div#about-link
         img
         {
             width: 100%;
-
-            
         }
     }
 
     div#about-link
     {
+        flex-basis: content;
         padding: 2rem;
+
         a
         {
             font-size: 4vw;
@@ -451,9 +561,11 @@ div#about-link
 @media (max-width:800px)
 {
 
-    div#navheader
+    body
     {
-        width: 100%;
+        overflow-x: hidden;
+        width: 90%;
+        column-gap: 10vw;
     }
 
     nav > ul.meniu-navigare
@@ -475,10 +587,6 @@ div#about-link
         }
     }
 
-    section#showcase-poze
-    {
-        width: 100%;
-    }
 
     div#slideshow.container
     {
