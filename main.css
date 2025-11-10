@@ -29,7 +29,6 @@ body
     padding: 0;
 
     background-color: var(--culoare-background);
-
     display: grid;
     grid-template-columns: 2fr 2fr;
     grid-template-rows: repeat(1fr);
@@ -71,55 +70,108 @@ ul#meniu-nav
 
     li
     {
+        flex: 0 1 auto;
+
         margin: 1rem;
         font-size: 1rem;
 
         button
         {
-
+            font-weight: 300;
             font-size: 1rem;
             background-color: transparent;
             border: 0px;
+
+            transition: scale .1s, font-weight .1s;
+        }
+        
+        button:hover
+        {
+            scale: 1.3;
+            font-weight: 700;
         }
 
         a
         {
+            font-weight: 300;
             font-size: 1rem;
 
             color: black;
             text-decoration: none;
+
+            transition: scale .1s, font-weight .1s;
+        }
+
+        a:hover
+        {
+            scale: 1.3;
+            font-weight: 700;
         }
     }
 }
 
 div.submeniu-nav
 {
-    display: block;
 
     position: absolute;
     z-index: 200;
+    visibility: hidden;
+    
+    border:1px solid yellow;
 
-    /* background-color: var(--culoare-nav); */
 
     ul
     {
-        visibility: hidden;
         display: flex;
         flex-direction: column;
 
-        justify-content: center;
-        /* align-items: center; */
+        border:1px solid yellow;
 
-        border: 2px solid yellow;
+        visibility: hidden;
+
         background-color: var(--culoare-nav);
 
         list-style: none;
-        li a
-            {
-                color: black;
-                text-decoration: none;
-            }
+        text-indent: 0;
+
+        li
+        {
+            flex: 0 1 auto;
+            width: 100%;
+            padding: 1rem;
+            margin: auto;
+            border:1px solid yellow;
+            text-align: left;
+        }
     }
+
+}
+
+button.buton-submeniu:hover + div.submeniu-nav ul
+{
+    visibility: visible;
+    animation: submeniu-aparitie .2s;
+}
+
+
+div.submeniu-nav ul:hover
+{
+    visibility: visible;
+}
+
+@keyframes submeniu-aparitie
+{
+   from
+   {
+        transform: scaleY(15%);
+        transform: translateY(5%);
+   }
+
+   to
+   {
+        transform: scaleY(100%);
+        transform: translateY(0%);
+   }
 }
 
 div#header-photo
@@ -220,13 +272,13 @@ div#slideshow
         height: 100%;
 
         animation: poza-fotografii .5s;
+        transition: scale .1s, filter .1s;
     }
 
     img:hover
     {
         scale: 1.1;
         filter: brightness(90%);
-        transition: scale .1s, filter .1s;
     }
 }
 
@@ -245,121 +297,13 @@ div#slideshow
     }
 } 
 
-section#descriere
-{
-    width: 65%;
-    height: 80%;
-    margin: auto;
-    margin-top: 2rem;
-    padding: 2rem;
-
-    align-items: center;
-    text-align: center;
-
-    border-radius: 1rem;
-
-    background-color: var(--culoare-nav);
-
-    font-size: 1vw;
-
-    animation: poza-fotografii .5s;
-
-    p
-    {
-        padding: 1rem ;
-        font-weight: 300;
-
-        text-align: left;
-    }    
-}
-
-
-section#cine-suntem
-{
-    width: 65%;
-    height: 80%;
-    margin: auto;
-    margin-top: 2rem;
-    padding: 2rem;
-
-    border-radius: 1rem;
-
-    align-items: center;
-
-    font-size: 1vw;
-
-    background-color: var(--culoare-nav);
-
-    animation: poza-fotografii .5s;
-}
-
-section#cine-suntem.container
-{
-    display: grid;
-
-    grid-template-columns: 2fr 2fr;
-    grid-template-rows: 2fr 1fr;
-    grid-template-areas: 
-    "photo text"
-    "photo link";
-}
-
-
-
-div#about-image
-{
-    padding: 3em;
-    img
-    {
-        width: 100%;
-
-        border: min(1rem,1vw) solid var(--culoare-background);
-        border-radius: 50%;
-
-        filter: saturate(0);
-    }
-}
-
-div#about-text
-{
-    padding: 1rem;
-    p
-    {
-        font-weight: 300;
-    }
-}
-
-div#about-link
-{
-    flex-basis: max-content;
-    padding: 1vw;
-    margin:1rem;
-
-    text-align: center;
-    a
-    {
-        font-size: 2vw;
-        color:black;
-
-        
-        text-decoration: none;
-    }
-
-    a:hover
-    {
-        color:gray;
-    }
-
-    a::after
-    {
-        content: "📷";
-    }
-}
-
 section#colectii
 {
  
-    background-color: var(--culoare-nav);
+    background-image: url(Poze/Main\ Page/poza-header.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+
     width: 95%;
     margin: auto;
     margin-top: 1vw;
@@ -368,7 +312,11 @@ section#colectii
     padding: .5rem;
     h2
     {
+        background-color: var(--culoare-nav);
+        text-align: center;
+
         padding: 1rem;
+        margin: 2rem;
         font-size: min(3vw, 4rem);
         animation: poza-fotografii .5s;
     }
@@ -391,6 +339,9 @@ div.poza-colectie
     {
         border-radius: 50%;
         border: min(1rem,1vw) solid var(--culoare-background);
+    
+        box-shadow: 
+        0 .5rem 1rem black;
 
         object-fit: cover;
         width: 100%;
@@ -398,27 +349,72 @@ div.poza-colectie
         aspect-ratio: 1/1;
 
         animation: poza-fotografii .5s;
+        transition: scale .1s, filter .1s;
     }
 
     img:hover
     {
         scale: 1.1;
         filter: brightness(70%);
-        transition: scale .1s, filter .1s;
+        
     }
 }
 
 footer
 {
+    display: flex;
+    flex-direction: column;
+
     width: 100%;
     height: 100%;
 
     margin: auto;
-    margin-top: 4vw;
+    margin-top: 1vw;
+
+    padding: min(4vw, 2rem);
 
     background-color: var(--culoare-footer);
     color:white;
 }
+
+footer p
+{
+    border:1px solid yellow;
+    margin: auto;
+    padding: 1rem;
+    width: 90%;
+    
+    text-align: justify;
+
+    font-weight: 300;
+    font-size: min(3vw, 2rem);
+}
+
+#footer-linkuri
+{
+    flex: 0 1;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    a
+    {
+        text-wrap: nowrap;
+        padding: 1rem;
+
+        text-decoration: none;
+        color: white;
+
+        font-size: min(4vw, 2rem);
+        transition: color .2s;
+    }
+
+    a:hover
+    {
+        color: black;
+        cursor: pointer;
+    }
+}
+
 
 
 @media (min-width: 2500px)
@@ -453,35 +449,12 @@ footer
         font-size: 1vw;
     }
 
-    div#about-image
-    {
-        padding: 2vw;
-    }
-
-    div#about-text
-    {
-        p
-        {
-            font-size: 1vw;
-        }
-    }
-
-    div#about-link
-    {
-        a
-        {
-            font-size: 1vw;
-        }
-    }
-
-    div#about-link > a::after
-    {
-        content: "📷";
-    }
 }
 
 @media (max-width:1400px)
 {
+
+    
     div#header-photo
     {
         img
@@ -512,50 +485,6 @@ footer
         }
     }
 
-
-    section#descriere
-    {
-        font-size: 3vw;    
-    }
-    
-    section#cine-suntem
-    {
-        font-size: 3vw;
-    }
-
-    section#cine-suntem.container
-    {
-        display: flex;
-
-        flex-direction: column;
-
-        justify-content: center;
-        align-items: center;
-    }
-
-    div#about-image
-    {
-        padding: 4vw;
-
-        width: 100%;
-        height: auto;
-
-        img
-        {
-            width: 100%;
-        }
-    }
-
-    div#about-link
-    {
-        flex-basis: content;
-        padding: 2rem;
-
-        a
-        {
-            font-size: 4vw;
-        }
-    }
 }
 
 @media (max-width:800px)

@@ -1,0 +1,21 @@
+*
+{
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: italic;
+    font-variation-settings:
+    "wdth" 75;
+
+    /* Variabile */
+    
+    /* Variabile header */
+    --culoare-nav: #e0e0e0;
+    --culoare-bordura-poza: black;
+    --culoare-footer: #5f6266;
+
+    /* Variabile body */
+    --culoare-background: #b2b2b2;
+    
+}
+
