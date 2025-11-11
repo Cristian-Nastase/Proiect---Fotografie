@@ -19,3 +19,269 @@
     
 }
 
+body
+{
+    width: 100%;
+
+    overflow-x: hidden;
+
+    display: grid;
+    place-items: center;
+
+    grid-template-columns: 1fr 1fr;
+
+    row-gap: 5rem;
+
+    grid-template-areas: 
+    "header header"
+    "autor despre"
+    "misiune misiune"
+    "valori valori"
+    "mesaj mesaj";
+
+    background: url(../Poze/Main\ Page/Slideshow/poza6.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+nav
+{
+    width: 100%;
+
+    display: flex;
+
+    background-color: var(--culoare-nav);
+}
+
+ul#meniu-nav
+{
+    list-style: none;
+    display: flex;
+
+    width: 100%;
+
+    justify-content: flex-start;
+    align-items: center;
+
+    padding: .5rem;
+
+    li
+    {
+        flex: 0 0 auto;
+
+        padding: 1.5rem;
+        font-size: 1rem;
+
+        a
+        {
+            font-weight: 300;
+            font-size: 2rem;
+
+            color: black;
+            text-decoration: none;
+
+            transition: font-size .1s,font-weight .1s;
+        }
+
+        a:hover
+        {
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+    }
+}
+
+.buton-submeniu:hover + div.submeniu-nav ul
+{
+    visibility: visible;
+}
+
+div.submeniu-nav
+{
+    position: absolute;
+    z-index: 200;
+    visibility: hidden;
+    
+    min-width: 150px;
+
+    display: flex;
+
+    ul
+    {
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+
+        justify-content: center;
+        align-items: center;
+
+        visibility: hidden;
+
+        background-color: var(--culoare-nav);
+
+        list-style: none;
+        text-indent: 0;
+
+        li
+        {
+            flex: 0 0 auto;
+
+            width: 100%;
+            padding: .5rem;
+
+            text-align: left;
+        }
+    }
+
+}
+
+@keyframes submeniu-aparitie
+{
+   from
+   {
+        transform: scaleY(15%);
+        transform: translateY(5%);
+   }
+
+   to
+   {
+        transform: scaleY(100%);
+        transform: translateY(0%);
+   }
+}
+
+#autor
+{
+    display: grid;
+
+    grid-template-areas: 
+    "autor-header autor-img"
+    "autor-text autor-img";
+
+    place-items: center;
+
+    padding:2rem;
+    margin: 1rem;
+    background-color: var(--culoare-nav);
+    border-radius: 15px;
+
+    img
+    {
+        width: 100%;
+
+
+        transition: scale 0.1s;
+    }
+
+    img:hover
+    {
+        scale: 1.1;
+    }
+}
+
+#autor *
+{
+    opacity: 0%;
+    animation: items-appear 0.7s;
+    animation-delay: 0.7s;
+}
+
+.casuta-text
+{
+    width: 60%;
+    height: auto;
+
+    background-color: var(--culoare-nav);
+    border-radius: 10px;
+
+    margin: 2rem;
+    padding: 1rem;
+    
+    box-shadow: black 0 0 2rem 1rem;
+
+    h2
+    {
+        width: fit-content;
+        padding: .5rem;
+        padding-bottom: .2rem;
+
+        color: #494949;
+
+        font-size: 2rem;
+
+        border: 0;
+        border-bottom: .2rem solid currentColor;
+        border-style: dashed;
+    }
+
+    ul
+    {
+        padding: 1rem;
+        margin: 2rem;
+        list-style: disc;
+
+        li
+        {
+            padding: 1rem;
+            b
+            {
+                color: #353535;
+            }
+
+            font-size: 1.5rem;
+            font-weight: 300;
+        }
+    }
+
+    p
+    {
+        padding: 1rem;
+
+        font-size:1.5rem;
+        font-weight: 300;
+
+        text-align: left;
+    }
+
+    animation: items-appear 0.7s;
+}
+
+@keyframes items-appear
+{
+    from
+    {
+        opacity: 10%;
+        transform: translateY(10%);
+    }
+
+    to
+    {
+        opacity: 100%;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width:800px) 
+{
+    body
+    {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .casuta-text
+    {
+        width: 80%;
+
+        ul li
+        {
+            font-size: 1rem;
+        }
+
+        p
+        {
+            font-size: 1rem;
+        }
+    }
+}

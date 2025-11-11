@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Despre noi</title>
 
+    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wdth,wght@75,900&display=swap" rel="stylesheet">
@@ -17,30 +19,64 @@
 </head>
 
 <body>
-    SALUT <a href="../main.html">Intoarce-te</a>
-    <section id="descriere" class="container" style="grid-area:description">
-        <h2>CINE SUNTEM?</h2>
+        <nav class="container" style="grid-area: header">
+                <ul id="meniu-nav">
+                    <li><a href="../main.html">Acasa</a></li>
+                    <li>
+                        <a class="buton-submeniu">Colectii</a>
+                        <div class="submeniu-nav">
+                           <ul>
+                                <li><a href="main.html">Cauta</a></li>
+                                <li><a href="main.html">Vezi colectii</a></li>
+                                <li><a href="main.html">Formular</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+        </nav>
+ 
+    <div id="despre-noi" class="casuta-text" style="grid-area: despre">
+        <h2>Despre noi</h2>
         <p>
-            Proiectul ,,Colectie Digitala" a pornit din pasiunea mai multor membri ai comunitatii foto,
-            unindu-ne dorinta de a depasi standardele de pana atunci de a distribui pozele pe retele sociale,
-            fiind creativi
+            Colectia Digitala este un proiect dedicat pasionaților de fotografie și arte 
+            vizuale, având ca temă principală fotografiile stradale. 
+            Ne propunem să surprindem momente de viață urbană, natura diversității și dinamica orașelor
+            printr-o colecție de imagini care reflectă realități diferite și povești unice.
         </p>
-    </section>
-    <section id="cine-suntem" class="container" style="grid-area: about">
-        <div id="about-image" style="grid-area: photo">
-            <img src="../Poze/Main Page/About/about-section.jpg">
-        </div>
-        <div id="about-text" style="grid-area: text">
-            <p>
-                Salut! Sunt Stanescu Mihai si respect totul. Am experienta de 12 ani 
-                in lumea fotografiei. Cand am fost acasa am inlocuit pe tine.
-            </p>
-        </div>
-        <div id="about-link" style="grid-area: link">
-            <a href="../Pagini HTML/about.html">
-                Contact
-            </a>
-        </div>
-    </section>
+    </div>
+
+    <div id="autor" class="casuta-text" style="grid-area: autor">
+        <img src="../Poze/Main Page/About/about-section.jpg" style="grid-area: autor-img">
+        <h2 style="grid-area: autor-header">Vorbele creatorului</h2>
+        <p style="grid-area: autor-text">Sunt mandru de ceea ce am realizat. <br> voi realiza catmai multe</p>
+    </div>
+
+    <div id="misiunea-noastra" class="casuta-text" style="grid-area: misiune">
+        <h2>Misiunea Noastră</h2>
+        <p>
+            Misiunea noastră este de a aduce la lumină frumusețea și
+            complexitatea vieții de zi cu zi prin intermediul fotografiei de stradă. 
+            Această artă nu doar documentează, ci și interpretează viața urbană, 
+            oferind o perspectivă asupra 
+            interacțiunilor umane, arhitecturii și mediului înconjurător.
+        </p>
+    </div>
+    <div id="valorile-noastre" class="casuta-text" style="grid-area: valori">
+        <h2>Valorile noastre</h2>
+        <ul>
+            <li><b>Autenticitate:</b> Credem în puterea fotografiilor de a surprinde momente reale și emoții umane, fără filtre și senzaționalism.</li>
+            <li><b>Creativitate:</b> Încurajăm exprimarea creativă a fotografilor, oferindu-le o platformă unde își pot prezenta lucrările și pot explora stiluri variate.</li>
+            <li><b>Comunitate:</b> Construim o comunitate de artiști și fani ai fotografiei, promovând colaborarea și schimbul de idei și experiențe.</li>
+        </ul>
+    </div>
+    <div id="mesaj" class="casuta-text" style="grid-area: mesaj">
+        <h2>Împreună pentru Artă</h2>
+        <p>
+            Vă invităm să explorați pagina noastră și să descoperiți poveștile surprinse în 
+            fotografiile stradale. Fie că sunteți un artist sau un pasionat al artei 
+            vizuale, alături de noi veți găsi inspirație și oportunități de exprimare 
+            creativă.
+        </p>
+    </div>
 </body>
 </html>
