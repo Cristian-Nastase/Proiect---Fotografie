@@ -92,57 +92,54 @@ ul#meniu-nav
             transition: font-size .1s,font-weight .1s;
         }
 
-        a:hover
-        {
-            font-size: 2.5rem;
-            font-weight: 700;
-        }
+
+    }
+    
+    li:hover > a
+    {
+        font-size: 2.5rem;
+        font-weight: 700;
     }
 }
 
-.buton-submeniu:hover + div.submeniu-nav ul
-{
-    visibility: visible;
-}
-
-div.submeniu-nav
+ul.submeniu-nav
 {
     position: absolute;
     z-index: 200;
     visibility: hidden;
     
+    width: 20%;
     min-width: 150px;
 
     display: flex;
+    
 
-    ul
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--culoare-nav);
+
+    list-style: none;
+    text-indent: 0;
+
+    li
     {
+        flex: 0 0 auto;
+
         width: 100%;
+        padding: .5rem;
 
-        display: flex;
-        flex-direction: column;
-
-        justify-content: center;
-        align-items: center;
-
-        visibility: hidden;
-
-        background-color: var(--culoare-nav);
-
-        list-style: none;
-        text-indent: 0;
-
-        li
-        {
-            flex: 0 0 auto;
-
-            width: 100%;
-            padding: .5rem;
-
-            text-align: left;
-        }
+        text-align: left;
     }
 
+}
+
+nav > ul#meniu-nav li:hover > ul.submeniu-nav,
+nav > ul#meniu-nav li > ul.submeniu-nav:hover
+{
+    visibility: visible;
 }
 
 @keyframes submeniu-aparitie
@@ -368,12 +365,15 @@ footer p
 {
     margin: auto;
     padding: 1rem;
+    padding-bottom: 2rem;
     width: 90%;
     
     text-align: justify;
 
     font-weight: 300;
     font-size: min(3vw, 2rem);
+
+    border-bottom: 3px solid white;
 }
 
 #footer-linkuri
@@ -382,6 +382,10 @@ footer p
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+
+    margin-top: 2rem;
+
+
     a
     {
         text-wrap: nowrap;
@@ -452,7 +456,7 @@ footer p
         p
         {
             left:4rem;
-            top:10rem;
+            top:20rem;
             font-size: 2rem;
         }
     }
@@ -485,7 +489,7 @@ footer p
 
         li a
         {
-            font-size: 5vw;
+            font-size: 1rem;
         }
     }
 
@@ -500,8 +504,15 @@ footer p
         }
     }
 
+    section#colectii
+    {
+        h2
+        {
+            font-size: 1rem;
+        }
+    }
 
-    div#slideshow.container
+    #slideshow.container
     {
         width: 80%;
         margin: auto;
@@ -515,7 +526,7 @@ footer p
         column-gap: 0.4rem;
     }
 
-    div#text
+    #text
     {
         h2
         {
