@@ -1,7 +1,6 @@
 *
 {
     font-family: "Roboto", sans-serif;
-    font-optical-sizing: auto;
     font-weight: 900;
     font-style: italic;
     font-variation-settings:
@@ -68,34 +67,32 @@ ul#meniu-nav
 
     padding: .5rem;
 
-    li
-    {
-        flex: 0 0 auto;
-
-        padding: 1.5rem;
-        font-size: 1rem;
-
-        a
-        {
-            font-weight: 300;
-            font-size: 2rem;
-
-            color: black;
-            text-decoration: none;
-
-            transition: font-size .1s,font-weight .1s;
-        }
-
-
-    }
-    li:hover > a
-    {
-        font-size: 2.5rem;
-        font-weight: 700;
-    }
 }
 
+ul#meniu-nav li
+{
+    flex: 0 0 auto;
 
+    padding: 1.5rem;
+    font-size: 1rem;
+}
+
+ul#meniu-nav li a
+{
+    font-weight: 300;
+    font-size: 2rem;
+
+    color: black;
+    text-decoration: none;
+
+    transition: font-size .1s,font-weight .1s;
+}
+
+ul#meniu-nav li:hover > a
+{
+    font-size: 2.5rem;
+    font-weight: 700;
+}
 
 ul.submeniu-nav
 {
@@ -103,30 +100,31 @@ ul.submeniu-nav
     z-index: 200;
     visibility: hidden;
     
+    width: 20%;
     min-width: 150px;
 
     display: flex;
+    
+
     flex-direction: column;
 
     justify-content: center;
     align-items: center;
 
-    width: 20%;
-
     background-color: var(--culoare-nav);
 
     list-style: none;
     text-indent: 0;
+}
 
-    li
-    {
-        flex: 0 0 auto;
+ul.submeniu-nav li
+{
+    flex: 0 0 auto;
 
-        width: 100%;
-        padding: .5rem;
+    width: 100%;
+    padding: .5rem;
 
-        text-align: left;
-    }
+    text-align: left;
 }
 
 nav > ul#meniu-nav li:hover > ul.submeniu-nav,
@@ -168,16 +166,14 @@ nav > ul#meniu-nav li > ul.submeniu-nav:hover
     0 0 5rem 1rem black;
 
     background-color: var(--culoare-nav);
-    
+}
 
-    h2
+#main-content h2
     {
         flex: 0 0 auto;
 
         padding: 4rem;
         margin: 3rem;
-
-        width: 40%;
 
         font-size: min(10rem, 10vw);
         color:black;
@@ -185,11 +181,9 @@ nav > ul#meniu-nav li > ul.submeniu-nav:hover
 
         text-align: center;
     }
-    
-    ul
-    {
-        width: 40%;
 
+#main-content ul
+    {
         border: 2px solid black;
         border-radius: 10px;
 
@@ -203,16 +197,17 @@ nav > ul#meniu-nav li > ul.submeniu-nav:hover
 
         justify-content: center;
         align-items: center;
+    }
 
-        li
-        {
-            flex: 0 0 auto;
-            width: 90%;
-            font-size: min(4vw, 2rem);  
-            padding: 1rem;
-        }
+#main-content ul li
+    {
+        flex: 0 0 auto;
+        width: 90%;
+        font-size: min(4vw, 2rem);  
+        padding: 1rem;
+    }
 
-        a
+#main-content ul a
         {
             flex: 0 0 auto;
             text-wrap: nowrap;
@@ -225,24 +220,25 @@ nav > ul#meniu-nav li > ul.submeniu-nav:hover
             transition: color .2s;
         }   
 
-        a:hover
+#main-content ul a:hover
         {   
             color: var(--culoare-footer);
             cursor: pointer;
         }
-    }
-}
+
 
 ul#locatii
 {
     list-style-type: circle;
 
     border: 0;
-    li
+
+}
+
+ul#locatii li
     {
         font-size: 1rem;
     }
-}
 
 footer
 {
@@ -286,25 +282,24 @@ footer p
     flex-direction: row;
 
     margin-top: 2rem;
+}
 
+#footer-linkuri a
+{
+    text-wrap: nowrap;
+    padding: 1rem;
 
-    a
-    {
-        text-wrap: nowrap;
-        padding: 1rem;
+    text-decoration: none;
+    color: white;
 
-        text-decoration: none;
-        color: white;
+    font-size: min(4vw, 2rem);
+    transition: color .2s;
+}
 
-        font-size: min(4vw, 2rem);
-        transition: color .2s;
-    }
-
-    a:hover
-    {
-        color: black;
-        cursor: pointer;
-    }
+#footer-linkuri a:hover
+{
+    color: black;
+    cursor: pointer;
 }
 
 @media (max-width: 1200px) 
@@ -313,33 +308,28 @@ footer p
     {
         justify-content: space-evenly;
 
-        li a
+    }
+
+    nav ul#meniu-nav li a
         {
             font-size: 5vw;
         }
-    }
 
     #main-content
     {
         width: 70%;
         flex-direction: column;
+    }
 
-        h2
-        {
-            width: 80%;
-
-            border-bottom: 3px solid black;
-        }
-        
-        ul
+    #main-content ul
         {
             width: 100%;
-        
-            a
-            {
-                margin:1rem;
-                font-size: 3vw;
-            }
         }
-    }   
+
+    #main-content ul a
+        {
+            margin: 1rem;
+            font-size: 3vw;
+        }
+        
 }

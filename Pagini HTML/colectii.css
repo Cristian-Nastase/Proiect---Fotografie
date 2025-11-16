@@ -1,7 +1,6 @@
 *
 {
     font-family: "Roboto", sans-serif;
-    font-optical-sizing: auto;
     font-weight: 900;
     font-style: italic;
     font-variation-settings:
@@ -63,34 +62,32 @@ ul#meniu-nav
 
     padding: .5rem;
 
-    li
-    {
-        flex: 0 0 auto;
-
-        padding: 1.5rem;
-        font-size: 1rem;
-
-        a
-        {
-            font-weight: 300;
-            font-size: 2rem;
-
-            color: black;
-            text-decoration: none;
-
-            transition: font-size .1s,font-weight .1s;
-        }
-
-
-    }
-    li:hover > a
-    {
-        font-size: 2.5rem;
-        font-weight: 700;
-    }
 }
 
+ul#meniu-nav li
+{
+    flex: 0 0 auto;
 
+    padding: 1.5rem;
+    font-size: 1rem;
+}
+
+ul#meniu-nav li a
+{
+    font-weight: 300;
+    font-size: 2rem;
+
+    color: black;
+    text-decoration: none;
+
+    transition: font-size .1s,font-weight .1s;
+}
+
+ul#meniu-nav li:hover > a
+{
+    font-size: 2.5rem;
+    font-weight: 700;
+}
 
 ul.submeniu-nav
 {
@@ -98,30 +95,31 @@ ul.submeniu-nav
     z-index: 200;
     visibility: hidden;
     
+    width: 20%;
     min-width: 150px;
 
     display: flex;
+    
+
     flex-direction: column;
 
     justify-content: center;
     align-items: center;
 
-    width: 20%;
-
     background-color: var(--culoare-nav);
 
     list-style: none;
     text-indent: 0;
+}
 
-    li
-    {
-        flex: 0 0 auto;
+ul.submeniu-nav li
+{
+    flex: 0 0 auto;
 
-        width: 100%;
-        padding: .5rem;
+    width: 100%;
+    padding: .5rem;
 
-        text-align: left;
-    }
+    text-align: left;
 }
 
 nav > ul#meniu-nav li:hover > ul.submeniu-nav,
@@ -177,7 +175,10 @@ div#lista-colectii
 
     align-items: center;
     justify-content: space-evenly;
-    img
+
+}
+
+div#lista-colectii img
     {
         flex: 0 0 auto;
 
@@ -193,11 +194,11 @@ div#lista-colectii
         transition: scale 0.1s;
     }
 
-    img:hover
+
+div#lista-colectii img:hover
     {
         scale: 1.1;
     }
-}
 
 div#filtre
 {
@@ -254,28 +255,25 @@ footer p
     flex-direction: row;
 
     margin-top: 2rem;
-
-
-    a
-    {
-        text-wrap: nowrap;
-        padding: 1rem;
-
-        text-decoration: none;
-        color: white;
-
-        font-size: min(4vw, 2rem);
-        transition: color .2s;
-    }
-
-    a:hover
-    {
-        color: black;
-        cursor: pointer;
-    }
 }
 
+#footer-linkuri a
+{
+    text-wrap: nowrap;
+    padding: 1rem;
 
+    text-decoration: none;
+    color: white;
+
+    font-size: min(4vw, 2rem);
+    transition: color .2s;
+}
+
+#footer-linkuri a:hover
+{
+    color: black;
+    cursor: pointer;
+}
 
 
 @media (max-width: 850px) 
@@ -283,12 +281,12 @@ footer p
     nav ul#meniu-nav
     {
         justify-content: space-evenly;
+    }
 
-        li a
+    nav ul#meniu-nav li a
         {
             font-size: 5vw;
         }
-    }
 
     div#main-content
     {

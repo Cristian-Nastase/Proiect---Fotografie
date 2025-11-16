@@ -1,7 +1,6 @@
 *
 {
     font-family: "Roboto", sans-serif;
-    font-optical-sizing: auto;
     font-weight: 900;
     font-style: italic;
     font-variation-settings:
@@ -33,7 +32,6 @@ body
     place-items: center;
 
     grid-template-columns: 2fr 2fr;
-    grid-template-rows: repeat(1fr);
 
     grid-template-areas:
         "header header"
@@ -74,32 +72,31 @@ ul#meniu-nav
 
     padding: .5rem;
 
-    li
-    {
-        flex: 0 0 auto;
+}
 
-        padding: 1.5rem;
-        font-size: 1rem;
+ul#meniu-nav li
+{
+    flex: 0 0 auto;
 
-        a
-        {
-            font-weight: 300;
-            font-size: 2rem;
+    padding: 1.5rem;
+    font-size: 1rem;
+}
 
-            color: black;
-            text-decoration: none;
+ul#meniu-nav li a
+{
+    font-weight: 300;
+    font-size: 2rem;
 
-            transition: font-size .1s,font-weight .1s;
-        }
+    color: black;
+    text-decoration: none;
 
+    transition: font-size .1s,font-weight .1s;
+}
 
-    }
-    
-    li:hover > a
-    {
-        font-size: 2.5rem;
-        font-weight: 700;
-    }
+ul#meniu-nav li:hover > a
+{
+    font-size: 2.5rem;
+    font-weight: 700;
 }
 
 ul.submeniu-nav
@@ -123,17 +120,16 @@ ul.submeniu-nav
 
     list-style: none;
     text-indent: 0;
+}
 
-    li
-    {
-        flex: 0 0 auto;
+ul.submeniu-nav li
+{
+    flex: 0 0 auto;
 
-        width: 100%;
-        padding: .5rem;
+    width: 100%;
+    padding: .5rem;
 
-        text-align: left;
-    }
-
+    text-align: left;
 }
 
 nav > ul#meniu-nav li:hover > ul.submeniu-nav,
@@ -161,40 +157,41 @@ div#header-photo
 {
     text-align: center;
     width: 100%;
-    img
-    {
-        width: 100%;
-        height: auto;
+}
 
-        object-fit: cover;
+div#header-photo img
+{
+    width: 100%;
+    height: auto;
 
-        border-bottom: .5rem solid var(--culoare-bordura-poza);
-    }
+    object-fit: cover;
 
-    p
-    {
-        position: absolute;
-        z-index:100;
+    border-bottom: .5rem solid var(--culoare-bordura-poza);
+}
 
-        padding: 3vw;
-        left: 10vw;
-        top: 10vw;
+div#header-photo p
+{
+    position: absolute;
+    z-index:100;
 
-        width: 50%;
+    padding: 3vw;
+    left: 10vw;
+    top: 10vw;
+
+    width: 50%;
         
-        margin: auto;
+    margin: auto;
 
-        color:white;
+    color:white;
 
-        font-weight: 900;
-        font-size: 4rem;
-        font-style: italic;
-        text-align: center;
+    font-weight: 900;
+    font-size: 4rem;
+    font-style: italic;
+    text-align: center;
 
-        background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.5);
 
-        animation: text-header-poza 1s ease-in-out;
-    }
+    animation: text-header-poza 1s ease-in-out;
 }
 
 @keyframes text-header-poza 
@@ -221,23 +218,22 @@ section#showcase-poze
     background-color: var(--culoare-nav);
 }
 
-div#text
+div#text h2
 {
-    h2
-    {
-        padding: 1rem;
+    padding: 1rem;
 
-        font-weight: 300;
-        text-align: center;
-    }
+    font-weight: 300;
+    text-align: center;
 }
+
+
 
 div#slideshow.container
 {
     /* width: 100%; */
     display: grid;
 
-    grid-template-columns: repeat(1fr, 6);
+    grid-template-columns: repeat(6, 1fr);
     grid-template-rows: 1fr 1fr;
     grid-template-areas: 
     "poza6 poza6 poza2 poza2 poza3 poza4"
@@ -247,22 +243,19 @@ div#slideshow.container
     column-gap: 2rem;
 }
 
-div#slideshow
+div#slideshow img
 {
-    img
-    {
-        width: 100%;
-        height: 100%;
+    width: 100%;
+    height: 100%;
 
-        animation: poza-fotografii .5s;
-        transition: scale .1s, filter .1s;
-    }
+    animation: poza-fotografii .5s;
+    transition: scale .1s, filter .1s;
+}
 
-    img:hover
-    {
-        scale: 1.1;
-        filter: brightness(90%);
-    }
+div#slideshow img:hover
+{
+    scale: 1.1;
+    filter: brightness(90%);
 }
 
 @keyframes poza-fotografii 
@@ -292,16 +285,17 @@ section#colectii
     height: auto;
 
     padding: .5rem;
-    h2
-    {
-        background-color: var(--culoare-nav);
-        text-align: center;
+}
 
-        padding: 1rem;
-        margin: 2rem;
-        font-size: min(3vw, 4rem);
-        animation: poza-fotografii .5s;
-    }
+section#colectii h2
+{
+    background-color: var(--culoare-nav);
+    text-align: center;
+
+    padding: 1rem;
+    margin: 2rem;
+    font-size: min(3vw, 4rem);
+    animation: poza-fotografii .5s;
 }
 
 div#slideshow-colectii.container
@@ -317,29 +311,29 @@ div.poza-colectie
 {
     flex: 0 1 20%;
     padding: 2vw;
-    img
-    {
-        border-radius: 50%;
-        border: min(1rem,1vw) solid var(--culoare-background);
+}
+
+div.poza-colectie img
+{
+    border-radius: 50%;
+    border: min(1rem,1vw) solid var(--culoare-background);
     
-        box-shadow: 
-        0 .5rem 1rem black;
+    box-shadow: 
+    0 .5rem 1rem black;
 
-        object-fit: cover;
-        width: 100%;
-        height: auto;
-        aspect-ratio: 1/1;
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1/1;
 
-        animation: poza-fotografii .5s;
-        transition: scale .1s, filter .1s;
-    }
+    animation: poza-fotografii .5s;
+    transition: scale .1s, filter .1s;
+}
 
-    img:hover
-    {
-        scale: 1.1;
-        filter: brightness(70%);
-        
-    }
+div.poza-colectie img:hover
+{
+    scale: 1.1;
+    filter: brightness(70%);
 }
 
 footer
@@ -384,55 +378,44 @@ footer p
     flex-direction: row;
 
     margin-top: 2rem;
-
-
-    a
-    {
-        text-wrap: nowrap;
-        padding: 1rem;
-
-        text-decoration: none;
-        color: white;
-
-        font-size: min(4vw, 2rem);
-        transition: color .2s;
-    }
-
-    a:hover
-    {
-        color: black;
-        cursor: pointer;
-    }
 }
 
+#footer-linkuri a
+{
+    text-wrap: nowrap;
+    padding: 1rem;
 
+    text-decoration: none;
+    color: white;
+
+    font-size: min(4vw, 2rem);
+    transition: color .2s;
+}
+
+#footer-linkuri a:hover
+{
+    color: black;
+    cursor: pointer;
+}
 
 @media (min-width: 2500px)
 {
-    div#navheader
-    {
-        a
+    div#navheader a
         {
             font-size: 4rem;
         }
-    }
 
-    div#header-photo
-    {
-        p
+    div#header-photo p
         {
             left:10vw;
             padding: 5vw;
             font-size: 3vw;
         }
-    }
-    div#text
-    {
-        h2
+
+    div#text h2
         {
             font-size: 1vw;
         }
-    }
 
     section#descriere
     {
@@ -445,30 +428,27 @@ footer p
 {
 
     
-    div#header-photo
-    {
-        img
+    div#header-photo img
         {
             width: 100%;
             margin: 0;
         }
 
-        p
+    div#header-photo p
         {
             left:4rem;
             top:20rem;
             font-size: 2rem;
         }
-    }
 
-    nav > ul#meniu-nav
+    nav ul#meniu-nav
     {
         justify-content: space-evenly;
+    }
 
-        li a
-        {
-            font-size: 5vw;
-        }
+    nav ul#meniu-nav li a
+    {
+        font-size: 5vw;
     }
 
 }
@@ -483,34 +463,18 @@ footer p
         column-gap: 10vw;
     }
 
-    nav ul#meniu-nav
+    div#header-photo p
     {
-        justify-content: space-around;
-
-        li a
-        {
-            font-size: 5vw;
-        }
-    }
-
-    div#header-photo
-    {
-        p
-        {
             padding: 1rem;
             left:2rem;
             top:10rem;
             font-size: 1rem;
-        }
     }
 
-    section#colectii
-    {
-        h2
+    section#colectii h2
         {
             font-size: 1rem;
         }
-    }
 
     #slideshow.container
     {
@@ -526,11 +490,8 @@ footer p
         column-gap: 0.4rem;
     }
 
-    #text
+    #text h2
     {
-        h2
-        {
-            font-size: 1rem;
-        }
+        font-size: 1rem;
     }
 }

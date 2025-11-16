@@ -1,7 +1,6 @@
 *
 {
     font-family: "Roboto", sans-serif;
-    font-optical-sizing: auto;
     font-weight: 900;
     font-style: italic;
     font-variation-settings:
@@ -30,24 +29,21 @@ body
     display: grid;
     place-items: center;
 
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 2fr 1fr 2fr;
 
     row-gap: 3rem;
     column-gap: 0;
 
     grid-template-areas: 
-    "header header"
-    "despre poza1"
-    "poza2 autor"
-    "valori poza3"
-    "poza4 misiune"
-    "mesaj mesaj"
-    "footer footer";
+    "header header header"
+    "despre poza1 autor"
+    "valori valori poza4"
+    "poza2 misiune misiune"
+    "mesaj mesaj poza3"
+    "footer footer footer";
 
 
-    background: url(../Poze/Main\ Page/Slideshow/poza6.webp);
-    background-repeat: no-repeat;
-    background-size: cover;
+    background: linear-gradient(45deg, black, var(--culoare-background));
 }
 
 nav
@@ -71,34 +67,32 @@ ul#meniu-nav
 
     padding: .5rem;
 
-    li
-    {
-        flex: 0 0 auto;
-
-        padding: 1.5rem;
-        font-size: 1rem;
-
-        a
-        {
-            font-weight: 300;
-            font-size: 2rem;
-
-            color: black;
-            text-decoration: none;
-
-            transition: font-size .1s,font-weight .1s;
-        }
-
-
-    }
-    li:hover > a
-    {
-        font-size: 2.5rem;
-        font-weight: 700;
-    }
 }
 
+ul#meniu-nav li
+{
+    flex: 0 0 auto;
 
+    padding: 1.5rem;
+    font-size: 1rem;
+}
+
+ul#meniu-nav li a
+{
+    font-weight: 300;
+    font-size: 2rem;
+
+    color: black;
+    text-decoration: none;
+
+    transition: font-size .1s,font-weight .1s;
+}
+
+ul#meniu-nav li:hover > a
+{
+    font-size: 2.5rem;
+    font-weight: 700;
+}
 
 ul.submeniu-nav
 {
@@ -106,30 +100,31 @@ ul.submeniu-nav
     z-index: 200;
     visibility: hidden;
     
+    width: 20%;
     min-width: 150px;
 
     display: flex;
+    
+
     flex-direction: column;
 
     justify-content: center;
     align-items: center;
 
-    width: 20%;
-
     background-color: var(--culoare-nav);
 
     list-style: none;
     text-indent: 0;
+}
 
-    li
-    {
-        flex: 0 0 auto;
+ul.submeniu-nav li
+{
+    flex: 0 0 auto;
 
-        width: 100%;
-        padding: .5rem;
+    width: 100%;
+    padding: .5rem;
 
-        text-align: left;
-    }
+    text-align: left;
 }
 
 nav > ul#meniu-nav li:hover > ul.submeniu-nav,
@@ -169,8 +164,9 @@ nav > ul#meniu-nav li > ul.submeniu-nav:hover
     margin: 1rem;
     
     border-radius: 15px;
+}
 
-    img
+#autor img
     {
         width: 100%;
         height: 100%;
@@ -178,7 +174,7 @@ nav > ul#meniu-nav li > ul.submeniu-nav:hover
         object-fit: cover;
         aspect-ratio: 1;
 
-        border: 10  px solid var(--culoare-background);
+        border: 10px solid var(--culoare-background);
         border-style: double;
 
         filter: saturate(0);
@@ -186,20 +182,21 @@ nav > ul#meniu-nav li > ul.submeniu-nav:hover
         transition: scale 0.1s;
     }
 
-    img:hover
+#autor img:hover
     {
         scale: 1.1;
     }
 
-    h2
+#autor h2
     {
         place-self: start;
     }
-}
+
+
 
 .casuta-text
 {
-    width: 65%;
+    width: 90%;
     height: auto;
 
     background: linear-gradient(190deg, gray 10%, lightgray 50%);
@@ -210,7 +207,13 @@ nav > ul#meniu-nav li > ul.submeniu-nav:hover
     
     box-shadow: var(--culoare-footer) 0 0 2rem 1rem;
 
-    h2
+
+
+
+    animation: items-appear 1s;
+}
+
+.casuta-text h2
     {
         width: fit-content;
         padding: 1rem;
@@ -223,13 +226,14 @@ nav > ul#meniu-nav li > ul.submeniu-nav:hover
         font-style: normal;
     }
 
-    ul
+.casuta-text ul
     {
         padding: 1rem;
         margin: 2rem;
         list-style: disc;
+    }
 
-        li
+.casuta-text ul li
         {
             list-style-position: inside;
 
@@ -240,25 +244,27 @@ nav > ul#meniu-nav li > ul.submeniu-nav:hover
 
             padding: 1rem;
             margin-bottom: 1rem;
-            b
-            {
-                color: #353535;
-            }
+
 
             font-size: 1.5rem;
             font-weight: 300;
 
             margin-right: 20%;
         }
-
-        li:nth-child(even)
+    
+.casuta-text text ul li:nth-child(even)
         {
             margin-right: 0;
             margin-left: 10%;
         }
+    
+.casuta-text ul li b
+            {
+                color: #353535;
+            }
 
-    }
-    p
+
+.casuta-text p
     {
         padding: 1rem;
 
@@ -268,14 +274,11 @@ nav > ul#meniu-nav li > ul.submeniu-nav:hover
         text-align: left;
     }
 
-    animation: items-appear 1s;
-}
-
 
 .poza-hover
 {
     margin: auto;
-    width: 50%;
+    width: 60%;
     height: auto;        
         
     object-fit: cover;
@@ -354,26 +357,25 @@ footer p
     flex-direction: row;
 
     margin-top: 2rem;
-
-    a
-    {
-        text-wrap: nowrap;
-        padding: 1rem;
-
-        text-decoration: none;
-        color: white;
-
-        font-size: min(4vw, 2rem);
-        transition: color .2s;
-    }
-
-    a:hover
-    {
-        color: black;
-        cursor: pointer;
-    }
 }
 
+#footer-linkuri a
+{
+    text-wrap: nowrap;
+    padding: 1rem;
+
+    text-decoration: none;
+    color: white;
+
+    font-size: min(4vw, 2rem);
+    transition: color .2s;
+}
+
+#footer-linkuri a:hover
+{
+    color: black;
+    cursor: pointer;
+}
 
 
 @media (max-width:1400px)
@@ -401,27 +403,28 @@ footer p
     .casuta-text
     {
         width: 60%;
-
-        ul
+    }
+    
+    .casuta-text ul
         {
             display: flex;
             flex-direction: column;
+         
             justify-content: center;
-
-            li
+        }
+    .casuta-text ul li
             {
                 padding: 1rem;
                 width: 100%;
                 margin: 0;
                 margin-bottom: 2vw;
             }
-            li:nth-child(even)
+
+    .casuta-text ul li:nth-child(even)
             {
                 margin: 0;
                 margin-bottom:2vw;
             }
-        }
-    }
 }
 
 @media (max-width:1400px) 
@@ -430,12 +433,12 @@ footer p
     nav ul#meniu-nav
     {
         justify-content: space-evenly;
+    }
 
-        li a
+    nav ul#meniu-nav li a
         {
             font-size: 5vw;
         }
-    }
 
     ul#meniu-nav li
     {
@@ -446,17 +449,17 @@ footer p
     {
         justify-self: center;
         width: 80%;
-
-        ul li
-        {
-            font-size: 1rem;
-        }
-
-        p
-        {
-            font-size: 1rem;
-        }
     }
+
+    .casuta-text ul li
+        {
+            font-size: 1rem;
+        }
+
+    .casuta-text p
+        {
+            font-size: 1rem;
+        }
 
     footer
     {
@@ -473,6 +476,3 @@ footer p
         font-size: 1.5rem;
     }
 }
-
-/* Nume grid */
-/* header despre autor poza1,2,3,4 misiune valori mesaj footer  */
