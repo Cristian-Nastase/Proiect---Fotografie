@@ -31,20 +31,15 @@ body
     display: grid;
     place-items: center;
 
-    grid-template-columns: 1fr 1fr;
-
-    row-gap: 3rem;
-    column-gap: 0;
-
     grid-template-areas: 
     "header header"
     "main main"
     "footer footer";
 
+    row-gap: 3rem;
+    column-gap: 0;
 
-    background: url(../Poze/Main\ Page/Slideshow/poza5.webp);
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-color: var(--culoare-background);
 }
 
 nav
@@ -150,98 +145,71 @@ nav > ul#meniu-nav li > ul.submeniu-nav:hover
    }
 }
 
-#main-content
+div#main-content
 {
     width: 90%;
-    height: 100%;
+    height: auto;
+    
+    margin: auto;
+    margin-top: 3vw;
+
+    display: grid;
+
+    grid-template-columns: 1fr 5fr;
+
+    grid-template-areas: 
+    "f c"
+    "f c";
+    column-gap: 0;
+    row-gap: 0;
+
+    background-color: white;
+
+}
+
+div#lista-colectii
+{
+    width: 80%;
+    margin-left: 20%;
 
     display: flex;
+    flex-wrap: wrap;
 
     align-items: center;
-    justify-content: center;
-
-    padding: 2rem;
-    margin: auto;
-
-    border-radius: 10px;
-    box-shadow: 
-    0 0 5rem 1rem black;
-
-    background-color: var(--culoare-nav);
-    
-
-    h2
+    justify-content: space-evenly;
+    img
     {
         flex: 0 0 auto;
 
-        padding: 4rem;
-        margin: 3rem;
+        max-width: 30%;
+        height: auto;
+        aspect-ratio: 9/16;
 
-        width: 40%;
+        margin: 1rem;
+        object-fit: cover;
 
-        font-size: min(10rem, 10vw);
-        color:black;
+        border: 3px solid var(--culoare-footer);
 
-
-        text-align: center;
+        transition: scale 0.1s;
     }
-    
-    ul
+
+    img:hover
     {
-        width: 40%;
-
-        border: 2px solid black;
-        border-radius: 10px;
-
-        flex: 0 0 auto;
-        padding: 1rem;
-
-        list-style-type: none;
-
-        display: flex;
-        flex-direction: column;
-
-        justify-content: center;
-        align-items: center;
-
-        li
-        {
-            flex: 0 0 auto;
-            width: 90%;
-            font-size: min(4vw, 2rem);  
-            padding: 1rem;
-        }
-
-        a
-        {
-            flex: 0 0 auto;
-            text-wrap: nowrap;
-            padding: 1rem;
-
-            text-decoration: none;
-            color: black;
-
-            font-size: 1.5rem;
-            transition: color .2s;
-        }   
-
-        a:hover
-        {   
-            color: var(--culoare-footer);
-            cursor: pointer;
-        }
+        scale: 1.1;
     }
 }
 
-ul#locatii
+div#filtre
 {
-    list-style-type: circle;
+    width: 100%;
 
-    border: 0;
-    li
-    {
-        font-size: 1rem;
-    }
+    padding: 1rem;
+    background-color: gray;
+
+    color: white;
+
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 footer
@@ -255,7 +223,7 @@ footer
     width: 100%;
     height: auto;
 
-    margin-top: 10vw;
+    margin-top: 5vw;
 
     padding: min(4vw, 2rem);
 
@@ -307,7 +275,10 @@ footer p
     }
 }
 
-@media (max-width: 1200px) 
+
+
+
+@media (max-width: 850px) 
 {
     nav ul#meniu-nav
     {
@@ -319,27 +290,8 @@ footer p
         }
     }
 
-    #main-content
+    div#main-content
     {
-        width: 70%;
-        flex-direction: column;
-
-        h2
-        {
-            width: 80%;
-
-            border-bottom: 3px solid black;
-        }
-        
-        ul
-        {
-            width: 100%;
-        
-            a
-            {
-                margin:1rem;
-                font-size: 3vw;
-            }
-        }
-    }   
+        width: 100%;
+    }
 }

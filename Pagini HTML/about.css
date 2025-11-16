@@ -25,6 +25,8 @@ body
 
     overflow-x: hidden;
 
+    margin: 0;
+
     display: grid;
     place-items: center;
 
@@ -232,8 +234,9 @@ nav > ul#meniu-nav li > ul.submeniu-nav:hover
             list-style-position: inside;
 
             border:4px solid var(--culoare-footer);
-            border-style: double;
             border-radius: 10px;
+
+            background-color: var(--culoare-nav);
 
             padding: 1rem;
             margin-bottom: 1rem;
@@ -267,6 +270,7 @@ nav > ul#meniu-nav li > ul.submeniu-nav:hover
 
     animation: items-appear 1s;
 }
+
 
 .poza-hover
 {
@@ -420,8 +424,18 @@ footer p
     }
 }
 
-@media (max-width:800px) 
+@media (max-width:1400px) 
 {
+
+    nav ul#meniu-nav
+    {
+        justify-content: space-evenly;
+
+        li a
+        {
+            font-size: 5vw;
+        }
+    }
 
     ul#meniu-nav li
     {
