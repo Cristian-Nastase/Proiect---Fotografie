@@ -327,7 +327,7 @@ div.poza-colectie img
     aspect-ratio: 1/1;
 
     animation: poza-fotografii .5s;
-    transition: scale .1s, filter .1s;
+    transition: scale .1s, filter .4s;
 }
 
 div.poza-colectie img:hover

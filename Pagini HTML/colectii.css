@@ -213,6 +213,11 @@ div#filtre
     border-bottom-right-radius: 10px;
 }
 
+div#filtre::after
+{
+    content: "... vor fi adaugate cu javascript";
+}
+
 footer
 {
     display: flex;

@@ -192,7 +192,25 @@ nav > ul#meniu-nav li > ul.submeniu-nav:hover
         place-self: start;
     }
 
+#despre-noi h2::after
+{
+    content: "📷";
+}
 
+#misiunea-noastra h2::after
+{
+    content: "💡";
+}
+
+#valorile-noastre h2::after
+{
+    content: "👥";
+}
+
+#mesaj h2::after
+{
+    content: "🖼️";
+}
 
 .casuta-text
 {
