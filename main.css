@@ -228,9 +228,9 @@ div#text h2
 
 
 
-div#slideshow.container
+div#slideshow
 {
-    /* width: 100%; */
+    width: 100%;
     display: grid;
 
     grid-template-columns: repeat(6, 1fr);
@@ -476,21 +476,22 @@ footer p
             font-size: 1rem;
         }
 
-    #slideshow.container
+    div#slideshow
     {
-        width: 80%;
-        margin: auto;
+        grid-template-columns: repeat(3,1fr);
+
         grid-template-areas: 
-        "poza1 poza2"
-        "poza3 poza4"
-        "poza5 poza6";
-        text-align: center;
+        "poza1 poza2 poza3"
+        "poza4 poza5 poza6";
+        margin: auto;
+
+        place-items: center;
 
         row-gap: 0.4rem;
         column-gap: 0.4rem;
     }
 
-    #text h2
+    div#text h2
     {
         font-size: 1rem;
     }
