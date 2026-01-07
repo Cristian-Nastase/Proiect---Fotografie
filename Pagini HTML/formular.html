@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urban</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wdth,wght@75,900&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wdth,wght@75,300&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/Pagini HTML/formular.css">
+    <script src="/header.js" defer></script>
+</head>
+<body>
+    <main class="main">
+        <article class="main__form">
+            <form class="form">
+                <label for="numele-colectiei" class="form__label invalid">
+                    Numele colecției *
+                    <input id="numele-colectiei" type="text" name="numele-colectiei" placeholder="Introdu numele colecției.." required>
+                </label>
+
+                <label for="scurta-descriere" class="form__label">
+                    Descrierea colecției *
+                    <textarea id="scurta-descriere" placeholder="Introdu descriere..." required></textarea>
+                </label>
+
+                <label for="poza-colectie" class="form__label">
+                    Poza colecției *
+                    <input id="poza-colectie" type="file" name="poza-colectie" required>
+                </label>
+
+                <label for="consimtamant" class="form__label">
+                    Esti de acord cu prelucrarea datelor introduse *
+                    <input id="consimtamant" type="checkbox" required>
+                </label>
+
+                <button type="submit" class="form__submit">Submit</button>
+            </form>
+
+            <div class="preview">
+                <h2 class="preview__text">Preview: </h2>
+                <img class="preview__imagine" src="/Poze/Contact/background.webp" alt="Introdu o imagine">
+            </div>
+        </article>
+    </main>
+</body>
+</html>

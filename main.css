@@ -35,6 +35,7 @@ body
 
     grid-template-areas:
         "header header"
+        'hero hero'
         "showcase showcase"
         "colectii colectii"
         "description about"
@@ -46,111 +47,9 @@ body
 
 }
 
-section#header
+section#hero
 {
     width: 100%;
-}
-
-nav
-{
-    width: 100%;
-
-    display: flex;
-
-    background-color: var(--culoare-nav);
-}
-
-ul#meniu-nav
-{
-    list-style: none;
-    display: flex;
-
-    width: 100%;
-
-    justify-content: flex-start;
-    align-items: center;
-
-    padding: .5rem;
-
-}
-
-ul#meniu-nav li
-{
-    flex: 0 0 auto;
-
-    padding: 1.5rem;
-    font-size: 1rem;
-}
-
-ul#meniu-nav li a
-{
-    font-weight: 300;
-    font-size: 2rem;
-
-    color: black;
-    text-decoration: none;
-
-    transition: font-size .1s,font-weight .1s;
-}
-
-ul#meniu-nav li:hover > a
-{
-    font-size: 2.5rem;
-    font-weight: 700;
-}
-
-ul.submeniu-nav
-{
-    position: absolute;
-    z-index: 200;
-    visibility: hidden;
-    
-    width: 20%;
-    min-width: 150px;
-
-    display: flex;
-    
-
-    flex-direction: column;
-
-    justify-content: center;
-    align-items: center;
-
-    background-color: var(--culoare-nav);
-
-    list-style: none;
-    text-indent: 0;
-}
-
-ul.submeniu-nav li
-{
-    flex: 0 0 auto;
-
-    width: 100%;
-    padding: .5rem;
-
-    text-align: left;
-}
-
-nav > ul#meniu-nav li:hover > ul.submeniu-nav,
-nav > ul#meniu-nav li > ul.submeniu-nav:hover
-{
-    visibility: visible;
-}
-
-@keyframes submeniu-aparitie
-{
-   from
-   {
-        transform: scaleY(15%);
-        transform: translateY(5%);
-   }
-
-   to
-   {
-        transform: scaleY(100%);
-        transform: translateY(0%);
-   }
 }
 
 div#header-photo
