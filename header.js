@@ -21,5 +21,5 @@ window.addEventListener('load', function()
     headerCSS.setAttribute('href', '/header.css');
     document.head.appendChild(headerCSS);
 
-    document.body.innerHTML = headerHTMLContent + document.body.innerHTML;
+    document.body.insertAdjacentHTML('afterbegin', headerHTMLContent);
 });

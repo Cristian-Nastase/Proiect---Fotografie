@@ -13,31 +13,34 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wdth,wght@75,300&display=swap" rel="stylesheet">
 
+    <link rel="icon" type="image/x-icon" href="/Poze/favicon.png">
+
     <link rel="stylesheet" href="/Pagini HTML/formular.css">
     <script src="/header.js" defer></script>
+    <script src="/Pagini HTML/formular.js" defer></script>
 </head>
 <body>
     <main class="main">
         <article class="main__form">
-            <form class="form">
-                <label for="numele-colectiei" class="form__label invalid">
+            <form id="form" class="form" method="get" novalidate>
+                <label for="numele-colectiei" class="form__field">
                     Numele colecției *
-                    <input id="numele-colectiei" type="text" name="numele-colectiei" placeholder="Introdu numele colecției.." required>
+                    <textarea id="numele-colectiei" name="numele-colectiei" placeholder="Introdu numele colecției.." required data-type="text"></textarea>
                 </label>
 
-                <label for="scurta-descriere" class="form__label">
+                <label for="scurta-descriere" class="form__field">
                     Descrierea colecției *
-                    <textarea id="scurta-descriere" placeholder="Introdu descriere..." required></textarea>
+                    <textarea id="scurta-descriere" placeholder="Introdu descriere..." required data-type="text"></textarea>
                 </label>
 
-                <label for="poza-colectie" class="form__label">
+                <label for="poza-colectie" class="form__field">
                     Poza colecției *
-                    <input id="poza-colectie" type="file" name="poza-colectie" required>
+                    <input id="poza-colectie" accept="image/*" type="file" name="poza-colectie" required data-type="file">
                 </label>
 
-                <label for="consimtamant" class="form__label">
+                <label for="consimtamant" class="form__field">
                     Esti de acord cu prelucrarea datelor introduse *
-                    <input id="consimtamant" type="checkbox" required>
+                    <input id="consimtamant" type="checkbox" required data-type="checkbox">
                 </label>
 
                 <button type="submit" class="form__submit">Submit</button>
@@ -45,7 +48,7 @@
 
             <div class="preview">
                 <h2 class="preview__text">Preview: </h2>
-                <img class="preview__imagine" src="/Poze/Contact/background.webp" alt="Introdu o imagine">
+                <img id="preview" class="preview__imagine" src="/Poze/Contact/background.webp" alt="Introdu o imagine">
             </div>
         </article>
     </main>

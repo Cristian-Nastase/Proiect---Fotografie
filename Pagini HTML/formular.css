@@ -39,7 +39,7 @@ body
     
     display: flex;
     
-    place-items: center;
+    justify-content: space-around;
     
     column-gap: 5rem;
     
@@ -50,27 +50,15 @@ body
 .form
 {
 
-    display: flex;
+    display: grid;
 
-    justify-content: space-between;
-    align-items: baseline;
-
-    justify-items: start;
-    align-content: space-between;
-
-    flex-wrap: wrap;
-
-    row-gap: 5rem;
+    row-gap: 2rem;
 
     padding: 2rem;
 
-    .form__label
+    .form__field
     {
-        width: fit-content;
-
-        flex-grow: 0;
-        flex-shrink: 1;
-        flex-basis: fit-content;
+        width: 50rem;
 
         font-size: 2rem;
 
@@ -84,11 +72,13 @@ body
 
         input,textarea
         {
+            font-size: 1.2rem;
+            font-weight: 200;
             line-height: 1;
             text-align: left;
 
             width: 100%;
-            height: 4rem;
+            height: 5rem;
             padding: 1rem;
         }
 
@@ -105,7 +95,7 @@ body
         }
     }
 
-    .form__label[for=consimtamant]
+    .form__field[for=consimtamant]
     {
         flex-direction: row;
 
@@ -118,9 +108,14 @@ body
         }
     }
 
-    .form__label.invalid
+    .form__field.invalid
     {
         color:hsl(from red h s l / 0.8);
+    }
+
+    .form__field textarea.invalid
+    {
+        background-color: hsl(from red h s l / 0.2);
     }
 
     .form__submit
@@ -160,8 +155,8 @@ body
 
     .preview__imagine
     {
-        width: 15rem;
-        height: auto;
+        width: 30rem;
+        height: 40rem;
 
         aspect-ratio: 9/16;
 
