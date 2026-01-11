@@ -1,173 +1,147 @@
-*
-{
+* {
     margin: 0;
     padding: 0;
-
     box-sizing: border-box;
 }
 
-body
-{
+body {
     display: grid;
-
     align-items: start;
     align-content: start;
     justify-content: center;
-
-    gap: 10rem;
-
+    gap: 2rem;
     width: 100vw;
     min-height: 100vh;
-
     background-color: var(--culoare-background);
 }
 
-.main
-{
+.main {
     place-self: center;
-    
-    width: fit-content;
-    height: fit-content;
-    
+    width: 100%;
     display: flex;
-    
+    justify-content: center;
 }
 
-.main__form
-{
-    width: 90vw;
-    
+.main__form {
+    width: 95vw;
+    max-width: 1400px;
+    height: fit-content;
     display: flex;
-    
-    justify-content: space-around;
-    
-    column-gap: 5rem;
-    
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 3rem;
     background-color: white;
     padding: 2rem;
 }
 
-.form
-{
-
+.form {
     display: grid;
-
     row-gap: 2rem;
-
-    padding: 2rem;
-
-    .form__field
-    {
-        width: 50rem;
-
-        font-size: 2rem;
-
-        display: flex;
-        flex-direction: column;
-
-        align-items: start;
-        justify-content: space-between;
-        
-        gap: 1rem; 
-
-        input,textarea
-        {
-            font-size: 1.2rem;
-            font-weight: 200;
-            line-height: 1;
-            text-align: left;
-
-            width: 100%;
-            height: 5rem;
-            padding: 1rem;
-        }
-
-        input[type=file]
-        {
-            padding: 0;
-            height: fit-content;
-        }
-        
-
-        textarea
-        {
-            resize: none;
-        }
-    }
-
-    .form__field[for=consimtamant]
-    {
-        flex-direction: row;
-
-        place-items: center;    
-        justify-content: start;
-
-        input
-        {
-            width: 2rem;
-        }
-    }
-
-    .form__field.invalid
-    {
-        color:hsl(from red h s l / 0.8);
-    }
-
-    .form__field textarea.invalid
-    {
-        background-color: hsl(from red h s l / 0.2);
-    }
-
-    .form__submit
-    {
-        flex-grow: 1;
-        flex-shrink: 0;
-        flex-basis: 100%;
-
-        align-self: center;
-        
-        font-size: 1rem;
-
-        font-weight: bold;
-        
-        padding: 1rem 3rem;
-    }
+    padding: 1rem;
+    flex: 1 1 40rem;
+    max-width: 50rem;
 }
 
-.preview
-{
-    flex-shrink: 0;
-    flex-basis: fit-content;
-    height: 100%;
-
+.form .form__field {
+    width: 100%;
+    font-size: clamp(1.1rem, 2vw, 1.5rem);
     display: flex;
     flex-direction: column;
+    align-items: start;
+    gap: 0.8rem; 
+    transition: color 0.3s;
+}
 
-    justify-content: space-around;
-    place-items: center;
+.form .form__field input, 
+.form .form__field textarea {
+    font-size: 1.1rem;
+    font-weight: 200;
+    width: 100%;
+    height: 4rem;
+    padding: 1rem;
+}
 
-    padding: 5rem;
+.form .form__field input[type=file] {
+    padding: 0;
+    height: auto;
+}
 
-    gap: 1rem;
+.form .form__field textarea {
+    resize: none;
+    height: 6rem;
+}
 
+.form .form__field[for=consimtamant] {
+    flex-direction: row;
+    align-items: center;    
+    justify-content: start;
+}
+
+.form .form__field[for=consimtamant] input {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: 1rem;
+}
+
+.form__field.invalid {
+    color: red;
+}
+
+.form__field textarea.invalid {
+    background-color: rgba(255, 0, 0, 0.1);
+}
+
+.form__submit {
+    width: 100%;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    background-color: #ffffff;
+    color: #000000;
+    border: 2px solid #000000;
+    transition: all 0.2s ease-in-out;
+}
+
+.form__submit:hover {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.preview {
+    flex: 0 1 30rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    gap: 1.5rem;
     border: 10px solid var(--culoare-background);
     border-radius: 8px;
+}
 
-    .preview__imagine
-    {
-        width: 30rem;
-        height: 40rem;
+.preview__imagine {
+    width: 100%;
+    max-width: 25rem;
+    height: auto;
+    aspect-ratio: 9/16;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
 
-        aspect-ratio: 9/16;
+.preview__imagine:hover {
+    transform: scale(1.02);
+}
 
-        text-align: center;
-        object-fit: cover;
-
-        transition: scale 0.2s;
+@media (max-width: 600px) {
+    .main__form {
+        padding: 1rem;
+        gap: 2rem;
     }
-
-    .preview__imagine:hover
-    {
-        scale: 1.1;
+    
+    .form, .preview {
+        flex: 1 1 100%;
+        max-width: 100%;
     }
 }

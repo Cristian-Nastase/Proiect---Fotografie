@@ -90,26 +90,6 @@ body
         place-self: start;
     }
 
-#despre-noi h2::after
-{
-    content: "📷";
-}
-
-#misiunea-noastra h2::after
-{
-    content: "💡";
-}
-
-#valorile-noastre h2::after
-{
-    content: "👥";
-}
-
-#mesaj h2::after
-{
-    content: "🖼️";
-}
-
 .casuta-text
 {
     width: 90%;
