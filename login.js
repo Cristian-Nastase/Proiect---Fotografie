@@ -1,32 +1,37 @@
-async function doLogin() {
+function doLogin() {
     const userInp = document.getElementById('username').value;
     const passInp = document.getElementById('password').value;
-    const errorMsg = document.getElementById('error-msg');
 
-    try {
-        const response = await fetch('../users.json');
-        
-        if (!response.ok) {
-            throw new Error("Fișierul JSON nu a putut fi accesat");
-        }
-
-        const users = await response.json();
-        const authenticatedUser = users.find(u => u.username === userInp && u.password === passInp);
-
-        if (authenticatedUser) {
-            sessionStorage.setItem('isLoggedIn', 'true');
-            window.location.href = "/Pagini HTML/formular.html";
-        } else {
-            errorMsg.classList.add('visible');
-        }
-    } catch (error) {
-        console.error("Eroare:", error);
-        
-        if (userInp === "admin" && passInp === "admin") {
-            sessionStorage.setItem('isLoggedIn', 'true');
-            window.location.href = "/Pagini HTML/formular.html";
-        }
-    }
+    const response = fetch('http://localhost:5500/useri.json');
+    
+    console.log(response);
+    response.then(function (response)
+    {
+        if(response.status=='200')
+            return response.text();
+        else
+            throw "eroare";
+    })
+    .then(function(text)
+    {
+        const users = JSON.parse(text);
+        console.log(users); 
+        users.forEach(user => {
+            if(userInp == user[username] && passInp == user[password])
+                console.log('de aici a iesit')
+                sessionStorage.setItem('isLoggedIn', 'true');
+                window.location.href = "/Pagini HTML/formular.html";
+        });
+    })
+    .catch( function(err)
+        {
+            console.log(err)
+            if (userInp === "admin" && passInp === "admin") {
+                sessionStorage.setItem('isLoggedIn', 'true');
+                window.location.href = "/Pagini HTML/formular.html";
+            }
+        });
+    
 }
 
 document.addEventListener('DOMContentLoaded', () => {

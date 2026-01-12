@@ -3,12 +3,14 @@ function afiseazaColectii() {
     container.innerHTML = '';
 
     const keys = [];
-    for (let i = 0; i < localStorage.length; i++) {
+    for (let i = 0; i < localStorage.length; i++) 
+    {
         keys.push(localStorage.key(i));
     }
 
     const keysRandom = [];
-    while (keys.length > 0) {
+    while (keys.length > 0) 
+    {
         const randomIndex = Math.floor(Math.random() * keys.length);
         keysRandom.push(keys.splice(randomIndex, 1)[0]);
     }
